@@ -10,7 +10,7 @@ The dataset has the following properties :
 • More than 41,790 images in total
 • File size : 2.32 Go
 
-This week, I worked on building a **drowsiness detection model** using deep learning. The key steps I completed are:  
+I worked on building a **drowsiness detection model** using deep learning. The key steps I completed are:  
 
 1. **Dataset Processing:**  
    - Loaded images of open and closed eyes from the dataset.  
@@ -31,7 +31,23 @@ This week, I worked on building a **drowsiness detection model** using deep lear
    - Generated a **confusion matrix** and **classification report** to analyze model performance.  
 
 5. **Predictions:**  
-   - Tested the model on a new image and successfully classified it as **open eyes** with high confidence.  
+   - Tested the model on a new image and successfully classified it as **open eyes** with high confidence.
+     
+6. **Eye Detection with Haar Cascade:**
 
-Next Steps: Further fine-tune the model to improve test accuracy and optimize for real-time inference.  
+This week, I integrated the functionality for eye detection using Haar cascades in OpenCV.
+I used the haarcascade_eye.xml classifier to detect eyes from the webcam in real-time. The system captures frames, applies the classifier, and highlights the detected eyes with green rectangles on the live webcam feed.
+The code continuously detects eyes until the 'q' key is pressed to stop the webcam feed.
+
+**Code Breakdown:**
+
+Initialization: The code accesses the webcam using cv2.VideoCapture(), and Haar cascade classifiers are loaded using cv2.CascadeClassifier().
+Detection: Each captured frame is converted to grayscale for better detection accuracy, and the detectMultiScale() method is used to detect eyes.
+Output: The detected eyes are highlighted with rectangles, and the resulting frame is shown in a window.
+
+**Next Steps:**
+
+Real-Time Eye Status Detection: We aim to enhance this system by implementing real-time eye status detection to classify whether the eyes are open or closed.
+Frame Recognition Time: The frame rate for detection will be fine-tuned to ensure optimal performance without excessive delays.
+Alert System: In the next phase, if the driver’s eyes are continuously closed (indicating drowsiness), the system will sound an alert (beep) to warn the driver.
 
