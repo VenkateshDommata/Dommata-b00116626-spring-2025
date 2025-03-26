@@ -110,6 +110,7 @@ Use color-coded text for different eye states:
 🟢 Green for "Open Eyes"
 
 🔴 Red for "Closed Eyes"
+
 ---
 
 ## **Next Steps:**
