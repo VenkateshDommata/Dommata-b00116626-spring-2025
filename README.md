@@ -62,47 +62,54 @@ This week, I integrated **eye detection** using **Haar cascades in OpenCV**.
 - The **resulting frame** is shown in a window.
 
 ## **7. Model Integration with OpenCV for Real-Time Eye State Detection**
-📌 Integration Approach:
+📌 Integration Approach
 
-Successfully bridged the machine learning model with OpenCV's real-time video capture
-Implemented a seamless workflow for eye detection and state classification
+Successfully bridged the machine learning model with OpenCV's real-time video capture. Implemented a seamless workflow for eye detection and state classification.
 
-Technical Integration Process:
-✔ Model Preparation:
+✔ Technical Integration Process
 
-Utilized a pre-trained neural network for binary eye state classification
-Configured the model to work with live video stream inputs
-Ensured compatibility between model input requirements and OpenCV frame capture
+Model Preparation:
 
-✔ Real-Time Processing Workflow:
+Utilized a pre-trained neural network for binary eye state classification.
 
-Capture video frames using OpenCV's VideoCapture
-Detect eye regions using Haar Cascade Classifier
-Extract and preprocess detected eye regions for model prediction
-Perform real-time classification of eye state
+Configured the model to work with live video stream inputs.
 
-Preprocessing Steps:
+Ensured compatibility between model input requirements and OpenCV frame capture.
 
-Convert detected eye region to grayscale
-Resize eye image to model's expected input dimension (224x224 pixels)
-Normalize pixel values (scale to 0-1 range)
-Add batch dimension for model input np.expand_dims()
+Real-Time Processing Workflow:
 
-Prediction Mechanism:
+Capture video frames using OpenCV's VideoCapture.
+
+Detect eye regions using Haar Cascade Classifier.
+
+Extract and preprocess detected eye regions for model prediction.
+
+Perform real-time classification of eye state.
+
+✔ Preprocessing Steps:
+
+Convert detected eye region to grayscale.
+
+Resize eye image to model's expected input dimension (224x224 pixels).
+
+Normalize pixel values (scale to 0-1 range).
+
+Add batch dimension for model input using np.expand_dims().
+
+✔ Prediction Mechanism:
 final_image = cv2.resize(eyes_roi, (224, 224))
 final_image = np.expand_dims(final_image, axis=0)  # Add batch dimension
 final_image = final_image / 255.0  # Normalize image
 
-# Predict eye state
-predictions = new_model.predict(final_image)
-predicted_index = (predictions > 0.5).astype(int)[0, 0]
-Visualization and Feedback:
+✔ Visualization and Feedback:
 
-Display eye state in real-time on video frame
+Display eye state in real-time on the video frame.
+
 Use color-coded text for different eye states:
 
-Green for "Open Eyes"
-Red for "Closed Eyes"
+🟢 Green for "Open Eyes"
+
+🔴 Red for "Closed Eyes"
 ---
 
 ## **Next Steps:**
