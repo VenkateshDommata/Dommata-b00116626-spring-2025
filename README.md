@@ -111,6 +111,27 @@ Use color-coded text for different eye states:
 
 🔴 Red for "Closed Eyes"
 
+## **8. Enhanced Drowsiness Detection and Alert System (This Week's Progress)**
+
+📌 **System Improvements:**
+- Added **facial detection** to improve the system's robustness.
+- Implemented a **drowsiness counter** that tracks consecutive frames with closed eyes.
+- Created an **alert system** that triggers when drowsiness is detected:
+  - **Visual alerts:** Red bounding boxes and "Sleep Alert!!" warning text.
+  - **Audio alerts:** Multi-tone beep sequence to effectively wake the driver.
+- Enhanced the **UI with color-coded status indicators**.
+- Implemented a **counter reset mechanism** when eyes reopen.
+- Optimized the **detection parameters** for better real-time performance.
+
+✔ **Current Status:**
+
+The system now successfully:
+- Detects both **face and eyes** in real-time video feed.
+- Classifies **eye state (open/closed)** using the pre-trained model.
+- Monitors for **prolonged eye closure** (more than 10 frames).
+- Triggers both **visual and audio alerts** when drowsiness is detected.
+- Provides **continuous feedback** through the UI.
+
 ---
 
 ## **Next Steps:**
@@ -119,6 +140,10 @@ Use color-coded text for different eye states:
 - Fine-tuning the **frame rate** for better performance without excessive delays.  
 
 ✅ **Drowsiness Alert System:**  
-- In the next phase, if the driver’s **eyes remain closed for too long**, the system will:  
+- In the next phase, if the driver's **eyes remain closed for too long**, the system will:  
   - **Trigger an alert sound (beep)** to warn the driver.  
 
+✅ **Final Improvements (for Submission by April 18th):**
+- **Fine-tune** the drowsiness threshold based on testing.
+- Implement **additional alert types** (possibly vibration or text notifications).
+- Create a **logging system** to record drowsiness events.
