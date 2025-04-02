@@ -139,10 +139,6 @@ The system now successfully:
 ✅ **Frame Recognition Optimization:**  
 - Fine-tuning the **frame rate** for better performance without excessive delays.  
 
-✅ **Drowsiness Alert System:**  
-- In the next phase, if the driver's **eyes remain closed for too long**, the system will:  
-  - **Trigger an alert sound (beep)** to warn the driver.  
-
 ✅ **Final Improvements (for Submission by April 18th):**
 - **Fine-tune** the drowsiness threshold based on testing.
 - Implement **additional alert types** (possibly vibration or text notifications).
